@@ -4,56 +4,230 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#101317">
-  <title>Los Santos | Cheat Companion</title>
-  <link rel="stylesheet" href="style.css">
+
+  <meta name="theme-color" content="#11151d">
+  <meta name="description" content="Your ultimate GTA V PC cheat code companion. Search, discover and copy every cheat code.">
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="GTA Cheats">
+
+  <title>Los Santos | GTA V Cheat Companion</title>
+
+  <link rel="manifest" href="./manifest.json">
+  <link rel="stylesheet" href="./style.css">
+
+  <script src="./script.js" defer></script>
 </head>
+
 <body>
 
+  <!-- Background atmosphere -->
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+
+  <!-- HEADER -->
   <header class="header">
-    <div class="brand">
-      <span class="logo">LS</span>
-      <div>
+
+    <a href="./" class="brand">
+      <div class="brand-mark">V</div>
+
+      <div class="brand-text">
         <h1>LOS SANTOS</h1>
         <p>CHEAT COMPANION</p>
       </div>
+    </a>
+
+    <div class="header-right">
+      <span class="platform">
+        <span class="status-dot"></span>
+        PC EDITION
+      </span>
     </div>
-    <span class="platform">PC VERSION</span>
+
   </header>
 
+
   <main>
+
+    <!-- HERO SECTION -->
     <section class="hero">
-      <p class="eyebrow">GRAND THEFT AUTO V</p>
-      <h2>Find your cheat.</h2>
-      <p>Every code. One tap away.</p>
 
-      <input
-        type="search"
-        id="search"
-        placeholder="Search cheats or codes..."
-        autocomplete="off"
-      >
-    </section>
+      <div class="hero-image-overlay"></div>
 
-    <nav id="filters" class="filters"></nav>
+      <div class="hero-content">
 
-    <section class="results">
-      <div class="results-heading">
-        <h3>CHEAT CODES</h3>
-        <span id="count"></span>
+        <div class="hero-label">
+          <span class="hero-line"></span>
+          GRAND THEFT AUTO V
+          <span class="hero-line"></span>
+        </div>
+
+        <h2>
+          LOS SANTOS<br>
+          <span>IS YOURS.</span>
+        </h2>
+
+        <p class="hero-description">
+          Every cheat. Every vehicle. Every shortcut.
+          Your ultimate companion to chaos.
+        </p>
+
+        <div class="hero-stats">
+          <div class="stat">
+            <strong>35</strong>
+            <span>CHEAT CODES</span>
+          </div>
+
+          <div class="stat-divider"></div>
+
+          <div class="stat">
+            <strong>06</strong>
+            <span>CATEGORIES</span>
+          </div>
+
+          <div class="stat-divider"></div>
+
+          <div class="stat">
+            <strong>PC</strong>
+            <span>PLATFORM</span>
+          </div>
+        </div>
+
       </div>
 
-      <div id="cheat-list"></div>
+      <div class="hero-bottom">
+        <span>WELCOME TO LOS SANTOS</span>
+        <span>EST. SAN ANDREAS</span>
+      </div>
+
     </section>
 
-    <footer>
-      <p>LOS SANTOS CHEAT COMPANION</p>
-      <p>Unofficial GTA V reference tool</p>
+
+    <!-- SEARCH SECTION -->
+    <section class="search-section">
+
+      <div class="section-heading">
+        <div>
+          <p class="section-eyebrow">YOUR PERSONAL CHEAT DATABASE</p>
+          <h3>FIND YOUR CHEAT</h3>
+        </div>
+
+        <span class="section-number">01 / 02</span>
+      </div>
+
+      <div class="search-box">
+
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="11" cy="11" r="7"></circle>
+          <path d="m16 16 4 4"></path>
+        </svg>
+
+        <input
+          type="search"
+          id="search"
+          placeholder="Search cheats, vehicles or codes..."
+          autocomplete="off"
+          aria-label="Search cheat codes"
+        />
+
+        <span class="search-shortcut">SEARCH</span>
+
+      </div>
+
+    </section>
+
+
+    <!-- CHEAT DATABASE -->
+    <section class="results">
+
+      <div class="section-heading database-heading">
+        <div>
+          <p class="section-eyebrow">EXPLORE THE DATABASE</p>
+          <h3>CHEAT DIRECTORY</h3>
+        </div>
+
+        <span class="section-number">02 / 02</span>
+      </div>
+
+
+      <!-- CATEGORY FILTERS -->
+      <nav
+        id="filters"
+        class="filters"
+        aria-label="Filter cheat categories"
+      ></nav>
+
+
+      <!-- RESULTS HEADER -->
+      <div class="results-heading">
+
+        <div class="results-title">
+          <span class="live-indicator"></span>
+          <h4>AVAILABLE CHEATS</h4>
+        </div>
+
+        <span id="count">35 cheats</span>
+
+      </div>
+
+
+      <!-- DYNAMIC CHEAT CARDS -->
+      <div id="cheat-list" aria-live="polite"></div>
+
+    </section>
+
+
+    <!-- INFORMATION PANEL -->
+    <section class="info-panel">
+
+      <div class="info-icon">!</div>
+
+      <div>
+        <h4>KNOW BEFORE YOU PLAY</h4>
+
+        <p>
+          Cheats are intended for GTA V Story Mode.
+          Activating cheats disables achievements
+          for the current play session.
+        </p>
+      </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+      <div class="footer-brand">
+        <span class="footer-v">V</span>
+
+        <div>
+          <strong>LOS SANTOS</strong>
+          <span>CHEAT COMPANION</span>
+        </div>
+      </div>
+
+      <p>
+        AN UNOFFICIAL GTA V FAN-MADE REFERENCE TOOL.
+      </p>
+
+      <p class="footer-copyright">
+        NOT AFFILIATED WITH ROCKSTAR GAMES.
+      </p>
+
     </footer>
+
   </main>
 
-  <div id="toast" class="toast"></div>
 
-  <script src="script.js"></script>
+  <!-- COPY NOTIFICATION -->
+  <div
+    id="toast"
+    class="toast"
+    role="status"
+    aria-live="polite"
+  ></div>
+
 </body>
 </html>
