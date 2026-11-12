@@ -1,0 +1,394 @@
+
+/* =================================
+   LOS SANTOS - CHEAT COMPANION
+   Mobile-first stylesheet
+================================= */
+
+:root {
+  --bg: #101317;
+  --surface: #1b2026;
+  --surface-light: #252c34;
+  --accent: #c8ff36;
+  --text: #f4f5f6;
+  --muted: #929ba5;
+  --border: #303841;
+  --radius: 14px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* HEADER */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.logo {
+  background: var(--accent);
+  color: #101317;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  font-size: 17px;
+}
+
+.brand h1 {
+  font-size: 15px;
+  letter-spacing: 1px;
+}
+
+.brand p {
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: 1.5px;
+}
+
+.platform {
+  background: #252c34;
+  color: var(--accent);
+  border: 1px solid #46552c;
+  padding: 6px 9px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+/* MAIN CONTENT */
+
+main {
+  width: 100%;
+  max-width: 650px;
+  margin: auto;
+  padding: 0 16px;
+}
+
+/* HERO */
+
+.hero {
+  padding: 36px 0 24px;
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 9px;
+}
+
+.hero h2 {
+  font-size: clamp(29px, 8vw, 42px);
+  line-height: 1.15;
+  margin-bottom: 8px;
+  letter-spacing: -1.5px;
+}
+
+.hero > p:not(.eyebrow) {
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 22px;
+}
+
+/* SEARCH */
+
+#search {
+  width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 16px;
+  border-radius: 12px;
+  font-size: 15px;
+  outline: none;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+#search:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px #c8ff361a;
+}
+
+#search::placeholder {
+  color: #737d88;
+}
+
+/* CATEGORY FILTERS */
+
+.filters {
+  display: flex;
+  gap: 9px;
+  overflow-x: auto;
+  padding: 4px 0 18px;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.filters::-webkit-scrollbar {
+  display: none;
+}
+
+.filter-btn {
+  flex-shrink: 0;
+  padding: 9px 15px;
+  border-radius: 30px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.filter-btn.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #101317;
+}
+
+/* RESULTS HEADING */
+
+.results-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 0 15px;
+}
+
+.results-heading h3 {
+  font-size: 13px;
+  letter-spacing: 1.5px;
+}
+
+#count {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* CHEAT CARDS */
+
+#cheat-list {
+  display: grid;
+  gap: 12px;
+}
+
+.cheat-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  transition: border-color 0.2s, transform 0.2s;
+  animation: appear 0.25s ease;
+}
+
+.cheat-card:active {
+  transform: scale(0.985);
+}
+
+.card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 13px;
+}
+
+.cheat-card h4 {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.category-tag {
+  background: #2c343c;
+  color: var(--accent);
+  padding: 5px 9px;
+  border-radius: 20px;
+  font-size: 9px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.code-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  background: #12171c;
+  padding: 11px 12px;
+  border-radius: 9px;
+  margin-bottom: 11px;
+}
+
+.code-row code {
+  color: var(--accent);
+  font-family: Consolas, monospace;
+  font-size: 15px;
+  font-weight: bold;
+  overflow-wrap: anywhere;
+}
+
+.copy-btn {
+  flex-shrink: 0;
+  background: var(--accent);
+  color: #101317;
+  border: none;
+  border-radius: 7px;
+  padding: 9px 12px;
+  font-size: 11px;
+  font-weight: 900;
+  cursor: pointer;
+  min-height: 38px;
+}
+
+.copy-btn:active {
+  transform: scale(0.94);
+}
+
+.description {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.unlock-note {
+  background: #332b1c;
+  color: #f0c779;
+  padding: 10px;
+  margin-top: 12px;
+  border-radius: 8px;
+  font-size: 11px;
+}
+
+/* EMPTY SEARCH RESULTS */
+
+.empty-state {
+  background: var(--surface);
+  border: 1px dashed var(--border);
+  padding: 35px 15px;
+  text-align: center;
+  border-radius: var(--radius);
+  color: var(--muted);
+}
+
+.empty-state h4 {
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+/* FOOTER */
+
+footer {
+  text-align: center;
+  padding: 35px 10px 25px;
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+footer p + p {
+  margin-top: 5px;
+  letter-spacing: 0;
+}
+
+/* COPY NOTIFICATION */
+
+.toast {
+  position: fixed;
+  bottom: 25px;
+  left: 50%;
+  transform: translate(-50%, 20px);
+  background: var(--accent);
+  color: #101317;
+  padding: 12px 20px;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: bold;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.25s;
+  z-index: 100;
+  white-space: nowrap;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+/* ANIMATIONS */
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* SMALL PHONES */
+
+@media (max-width: 360px) {
+  main {
+    padding: 0 12px;
+  }
+
+  .header {
+    padding: 14px 12px;
+  }
+
+  .platform {
+    font-size: 9px;
+  }
+
+  .cheat-card {
+    padding: 13px;
+  }
+
+  .code-row code {
+    font-size: 13px;
+  }
+}
+
+/* TABLETS AND DESKTOP */
+
+@media (min-width: 700px) {
+  main {
+    padding: 0 25px;
+  }
+
+  .hero {
+    padding-top: 55px;
+  }
+
+  .cheat-card:hover {
+    border-color: #647c31;
+  }
+}
