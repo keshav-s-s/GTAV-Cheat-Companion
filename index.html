@@ -1,48 +1,66 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <meta name="theme-color" content="#11151d">
+
   <meta name="description" content="Your ultimate GTA V PC cheat code companion. Search, discover and copy every cheat code.">
 
+  <!-- PWA / MOBILE CONFIGURATION -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="GTA Cheats">
 
-  <title>Los Santos | GTA V Cheat Companion</title>
+  <!-- APP ICONS -->
+  <link rel="icon" type="image/png" href="./icons/icon-192.png">
+  <link rel="apple-touch-icon" href="./icons/icon-192.png">
 
+  <!-- PWA MANIFEST -->
   <link rel="manifest" href="./manifest.json">
+
+  <!-- STYLESHEET -->
   <link rel="stylesheet" href="./style.css">
 
+  <title>Los Santos | GTA V Cheat Companion</title>
+
+  <!-- MAIN JAVASCRIPT -->
   <script src="./script.js" defer></script>
+
 </head>
 
 <body>
 
-  <!-- Background atmosphere -->
+  <!-- BACKGROUND ATMOSPHERE -->
   <div class="ambient ambient-one"></div>
   <div class="ambient ambient-two"></div>
+
 
   <!-- HEADER -->
   <header class="header">
 
     <a href="./" class="brand">
+
       <div class="brand-mark">V</div>
 
       <div class="brand-text">
         <h1>LOS SANTOS</h1>
         <p>CHEAT COMPANION</p>
       </div>
+
     </a>
 
     <div class="header-right">
+
       <span class="platform">
         <span class="status-dot"></span>
         PC EDITION
       </span>
+
     </div>
 
   </header>
@@ -74,6 +92,7 @@
         </p>
 
         <div class="hero-stats">
+
           <div class="stat">
             <strong>35</strong>
             <span>CHEAT CODES</span>
@@ -92,6 +111,7 @@
             <strong>PC</strong>
             <span>PLATFORM</span>
           </div>
+
         </div>
 
       </div>
@@ -108,13 +128,19 @@
     <section class="search-section">
 
       <div class="section-heading">
+
         <div>
-          <p class="section-eyebrow">YOUR PERSONAL CHEAT DATABASE</p>
+          <p class="section-eyebrow">
+            YOUR PERSONAL CHEAT DATABASE
+          </p>
+
           <h3>FIND YOUR CHEAT</h3>
         </div>
 
         <span class="section-number">01 / 02</span>
+
       </div>
+
 
       <div class="search-box">
 
@@ -129,7 +155,7 @@
           placeholder="Search cheats, vehicles or codes..."
           autocomplete="off"
           aria-label="Search cheat codes"
-        />
+        >
 
         <span class="search-shortcut">SEARCH</span>
 
@@ -142,12 +168,17 @@
     <section class="results">
 
       <div class="section-heading database-heading">
+
         <div>
-          <p class="section-eyebrow">EXPLORE THE DATABASE</p>
+          <p class="section-eyebrow">
+            EXPLORE THE DATABASE
+          </p>
+
           <h3>CHEAT DIRECTORY</h3>
         </div>
 
         <span class="section-number">02 / 02</span>
+
       </div>
 
 
@@ -173,7 +204,10 @@
 
 
       <!-- DYNAMIC CHEAT CARDS -->
-      <div id="cheat-list" aria-live="polite"></div>
+      <div
+        id="cheat-list"
+        aria-live="polite"
+      ></div>
 
     </section>
 
@@ -200,12 +234,14 @@
     <footer class="footer">
 
       <div class="footer-brand">
+
         <span class="footer-v">V</span>
 
         <div>
           <strong>LOS SANTOS</strong>
           <span>CHEAT COMPANION</span>
         </div>
+
       </div>
 
       <p>
@@ -228,6 +264,38 @@
     role="status"
     aria-live="polite"
   ></div>
+
+
+  <!-- SERVICE WORKER REGISTRATION -->
+  <script>
+    if ("serviceWorker" in navigator) {
+
+      window.addEventListener("load", () => {
+
+        navigator.serviceWorker.register("./service-worker.js")
+
+          .then(registration => {
+
+            console.log(
+              "Offline support enabled:",
+              registration.scope
+            );
+
+          })
+
+          .catch(error => {
+
+            console.error(
+              "Service Worker registration failed:",
+              error
+            );
+
+          });
+
+      });
+
+    }
+  </script>
 
 </body>
 </html>
